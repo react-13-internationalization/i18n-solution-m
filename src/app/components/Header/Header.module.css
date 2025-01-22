@@ -1,0 +1,28 @@
+/* Header.module.css */
+.header {
+  padding: 16px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link {
+  margin-right: 16px;
+  font-weight: bold;
+  color: #0070f3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #0056b3;
+}
+
+.link:last-child {
+  margin-right: 0;
+}

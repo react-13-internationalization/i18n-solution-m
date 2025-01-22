@@ -1,0 +1,9 @@
+/* HomePage.module.css */
+
+.home {
+  color: #333333; /* Темний текст */
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto; /* Центрування */
+}
+
