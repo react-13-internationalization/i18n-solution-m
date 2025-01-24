@@ -25,7 +25,7 @@ describe('Multilingual Support', () => {
 
   it('should successfully switch to Ukrainian and update content dynamically', () => {
     // Change language to Ukrainian
-    cy.get('select').select('Ukrainian');
+    cy.get('select').select('Українська');
 
     // Verify the content is updated
     cy.contains('Ласкаво просимо до вашого додатку').should('be.visible');
