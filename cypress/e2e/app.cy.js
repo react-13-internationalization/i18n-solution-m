@@ -23,5 +23,22 @@ describe('Multilingual Support', () => {
     cy.get('select').select('English').should('have.value', 'en');
   });
 
+  it('should successfully switch to Ukrainian and update content dynamically', () => {
+    // Change language to Ukrainian
+    cy.get('select').select('Ukrainian');
+
+    // Verify the content is updated
+    cy.contains('Ласкаво просимо до вашого додатку').should('be.visible');
+    cy.contains('Ваш універсальний розв’язок для всіх ваших потреб.').should(
+      'be.visible'
+    );
+    cy.contains('Ласкаво просимо!').should('be.visible');
+    cy.contains(
+      'Вивчайте нашу платформу та відкривайте всі захоплюючі можливості, які ми пропонуємо для підвищення вашого досвіду.'
+    ).should('be.visible');
+
+    cy.url().should('include', '/uk');
+  });
+
  
 });
