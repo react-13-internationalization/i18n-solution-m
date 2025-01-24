@@ -29,7 +29,7 @@ describe('Multilingual Support', () => {
 
     // Verify the content is updated
     cy.contains('Ласкаво просимо до Вашого додатку').should('be.visible');
-    cy.contains(`Ваш універсальний розв'язок для всіх ваших потреб.`).should(
+    cy.contains(`Ваш універсальний інструмент для всіх потреб.`).should(
       'be.visible'
     );
     cy.contains('Ласкаво просимо!').should('be.visible');
