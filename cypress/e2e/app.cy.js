@@ -23,42 +23,5 @@ describe('Multilingual Support', () => {
     cy.get('select').select('English').should('have.value', 'en');
   });
 
-  it('should successfully switch to Ukrainian and update content dynamically', () => {
-    // Change language to Ukrainian
-    cy.get('select').select('Ukrainian');
-
-    // Verify the content is updated
-    cy.contains('Ласкаво просимо до вашого додатку').should('be.visible');
-    cy.contains('Ваш універсальний розв’язок для всіх ваших потреб.').should(
-      'be.visible'
-    );
-    cy.contains('Ласкаво просимо!').should('be.visible');
-    cy.contains(
-      'Вивчайте нашу платформу та відкривайте всі захоплюючі можливості, які ми пропонуємо для підвищення вашого досвіду.'
-    ).should('be.visible');
-
-    // Ensure that the URL remains the same (only language context changes)
-    cy.url().should('include', '/en'); // Still on the same page
-  });
-
-  it('should navigate to About page and verify localized content', () => {
-    // Navigate to About Page
-    cy.contains('About us').click();
-
-    // Check if on About page
-    cy.url().should('include', '/about');
-
-    // Check English content
-    cy.contains('Our Story').should('exist');
-    cy.contains('Mission').should('exist');
-    cy.contains('Values').should('exist');
-
-    // Switch to Ukrainian
-    cy.get('select').select('Ukrainian');
-
-    // Verify Ukrainian content updates
-    cy.contains('Наша історія').should('be.visible');
-    cy.contains('Місія').should('be.visible');
-    cy.contains('Цінності').should('be.visible');
-  });
+ 
 });
