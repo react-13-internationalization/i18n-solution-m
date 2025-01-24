@@ -28,8 +28,8 @@ describe('Multilingual Support', () => {
     cy.get('select').select('Українська');
 
     // Verify the content is updated
-    cy.contains('Ласкаво просимо до вашого додатку').should('be.visible');
-    cy.contains('Ваш універсальний розв’язок для всіх ваших потреб.').should(
+    cy.contains('Ласкаво просимо до Вашого додатку').should('be.visible');
+    cy.contains(`Ваш універсальний розв'язок для всіх ваших потреб.`).should(
       'be.visible'
     );
     cy.contains('Ласкаво просимо!').should('be.visible');
