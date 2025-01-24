@@ -48,16 +48,26 @@ describe('Multilingual Support', () => {
     cy.url().should('include', '/about');
 
     // Check English content
+    cy.contains('About Us').should('exist');
+    cy.contains('Our mission').should('exist');
     cy.contains('Our Story').should('exist');
-    cy.contains('Mission').should('exist');
-    cy.contains('Values').should('exist');
+    cy.contains('Founded in 2020').should('exist');
+    cy.contains('Our Values').should('exist');
+    cy.contains('Integrity, Innovation').should('exist');
+    cy.contains('Contact Us').should('exist');
+    cy.contains('For inquiries').should('exist');
 
     // Switch to Ukrainian
-    cy.get('select').select('Ukrainian');
+    cy.get('select').select('Українська');
 
     // Verify Ukrainian content updates
-    cy.contains('Наша історія').should('be.visible');
-    cy.contains('Місія').should('be.visible');
-    cy.contains('Цінності').should('be.visible');
+    cy.contains('Про нас').should('exist');
+    cy.contains('Наша місія').should('exist');
+    cy.contains('Наша історія').should('exist');
+    cy.contains('Заснована в 2020').should('exist');
+    cy.contains('Наші цінності').should('exist');
+    cy.contains('Цінності, такі як').should('exist');
+    cy.contains(`Зв'яжіться з нами`).should('exist');
+    cy.contains('Для запитів').should('exist');
   });
 });
