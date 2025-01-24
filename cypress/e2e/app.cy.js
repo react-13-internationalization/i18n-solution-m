@@ -40,5 +40,24 @@ describe('Multilingual Support', () => {
     cy.url().should('include', '/uk');
   });
 
- 
+  it('should navigate to About page and verify localized content', () => {
+    // Navigate to About Page
+    cy.contains('About us').click();
+
+    // Check if on About page
+    cy.url().should('include', '/about');
+
+    // Check English content
+    cy.contains('Our Story').should('exist');
+    cy.contains('Mission').should('exist');
+    cy.contains('Values').should('exist');
+
+    // Switch to Ukrainian
+    cy.get('select').select('Ukrainian');
+
+    // Verify Ukrainian content updates
+    cy.contains('Наша історія').should('be.visible');
+    cy.contains('Місія').should('be.visible');
+    cy.contains('Цінності').should('be.visible');
+  });
 });
